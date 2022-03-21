@@ -7,6 +7,10 @@ const useMemoExample = () => {
 
     // const sqrt = getSqrt(number);
     const sqrt = useMemo(() => getSqrt(number), [number]);
+    // - app remembers the return value of the function, until the value of "number" changes.
+    // - getSqrt() does not run on every render, only when the expected outcome is different.
+    // - changing back the value of "number" to a previous value runs getSqrt() and does not
+    //   give e memorised return value.
 
     useEffect(() => {
         renders.current = renders.current + 1;
@@ -29,7 +33,7 @@ const useMemoExample = () => {
             <button className="btn btn-primary" onClick={handleButtonClick}>
                 Re Render
             </button>
-            <h3>Component rendered {renders.current} times.</h3>
+            <h3>Memo example rendered {renders.current} times.</h3>
         </div>
     );
 };
