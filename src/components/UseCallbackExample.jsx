@@ -8,6 +8,12 @@ function UseCallbackExample() {
     const addTask = useCallback(() => {
         setTasks((prevState) => [...prevState, 'Some Task']);
     }, [setTasks]);
+    // useCallback(fn, deps) is equivalent to useMemo(() => fn, deps).
+    //    - addTask only changes if the dependency has changed
+    //    - React guarantees that "setState" functions (e.g: setTasks)
+    //      are stable and won't change on re-renders.
+    // React.memo() is used around TaskButton component
+    //    - TaskButton is memorized, and only re-renders when the parameters change
 
     return (
         <div>
