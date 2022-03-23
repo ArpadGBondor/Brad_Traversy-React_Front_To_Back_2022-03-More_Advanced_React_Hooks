@@ -11,14 +11,14 @@ function UseRefExample2() {
     }, [name]);
     return (
         <div>
-            <h1>Renders: {renders.current}</h1>
-            <h2>Previous state: {prevName.current}</h2>
             <input
                 type="text"
                 value={name}
                 className="form-control mb-3"
                 onChange={(e) => setName(e.currentTarget.value)}
             />
+            <h2>Previous state: {prevName.current}</h2>
+            <h3>useRef example 2 rendered: {renders.current} times</h3>
         </div>
     );
 }
