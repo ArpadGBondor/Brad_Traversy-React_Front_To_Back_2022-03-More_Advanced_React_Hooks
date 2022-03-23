@@ -11,11 +11,3 @@
 ## Used Tools:
 
 -   Frontend: React.js
-
-## Mayor changes:
-
-## Environment variables:
-
-## The instructor's solution:
-
--   The source code of the instructor's solution is in [this Github repo](https://github.com/bradtraversy/github-finder-app)
